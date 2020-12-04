@@ -11,11 +11,11 @@ public class DataOrganiser {
      * Returns a {@code List} which is sorted by the given attribute from highest value to lowest
      *
      * @param array the array containing the items to be sorted
-     * @param key the name of the attribute to sort on e.g. xG
+     * @param key   the name of the attribute to sort on e.g. xG
      * @return the sorted list in descending order
      */
     public List<JSONObject> sortByKey(JSONArray array, String key) {
-         List<JSONObject> list = new ArrayList<>();
+        List<JSONObject> list = new ArrayList<>();
         for (int i = 0; i < array.length(); i++) {
             list.add(array.getJSONObject(i));
         }
@@ -29,10 +29,10 @@ public class DataOrganiser {
     }
 
     /**
-     *  Similar to {@link #limit(List, int)} but accepts a JSONArray as parameter
+     * Similar to {@link #limit(List, int)} but accepts a JSONArray as parameter
      *
      * @param array the array to be shortened
-     * @param size the number of items in the new list
+     * @param size  the number of items in the new list
      * @return the shortened list
      */
     public List<JSONObject> limit(JSONArray array, int size) {

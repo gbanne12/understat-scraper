@@ -11,7 +11,7 @@ class DataOrganiserTest {
         val playerData = understat.playerData
 
         // When I limit the size of the passed in array to 20
-        val size  = 20
+        val size = 20
         val limitedList = DataOrganiser().limit(playerData, size)
 
         // Then
@@ -33,7 +33,7 @@ class DataOrganiserTest {
         val second = sortedList[1].getFloat(key)
         val third = sortedList[2].getFloat(key)
 
-        assertTrue("First " + first + " should be greater than " + second,  first > second)
+        assertTrue("First " + first + " should be greater than " + second, first > second)
         assertTrue("Second " + second + " should be greater than " + third, second > third)
     }
 

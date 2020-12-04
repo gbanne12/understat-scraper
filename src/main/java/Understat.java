@@ -22,6 +22,7 @@ public class Understat {
 
     /**
      * Obtains the player data from http://understat.com/League/EPL
+     *
      * @return a JSONArray containing the data for each player
      */
     public JSONArray getPlayerData() {
@@ -39,7 +40,8 @@ public class Understat {
     }
 
     /**
-     * Obtains the player data from http://understat.com/League/EPL
+     * Obtains the fixture data from http://understat.com/League/EPL
+     *
      * @return a JSONArray containing the data for each of the 380 fixtures played in a season
      */
     public JSONArray getFixtureData() {
@@ -60,6 +62,7 @@ public class Understat {
 
     /**
      * Obtains the teams data from http://understat.com/League/EPL
+     *
      * @return a JSONArray containing the data for each of the 20 teams
      */
     public JSONObject getTeamsData() {

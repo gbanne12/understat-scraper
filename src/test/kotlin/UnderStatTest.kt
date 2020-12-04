@@ -1,4 +1,5 @@
-import junit.framework.TestCase.*
+import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
 class UnderStatTest {
@@ -11,18 +12,18 @@ class UnderStatTest {
 
         // Then we expect there to be a minimum of 220 items (11 players x 20 teams)
         val minimumExpectedNumberOfItems = 220
-            assertTrue(playerData.length() >= minimumExpectedNumberOfItems)
+        assertTrue(playerData.length() >= minimumExpectedNumberOfItems)
     }
 
     @Test
     fun testCanGetDatesData() {
         // When obtaining the dates data from understat site
         val understat = Understat()
-        val data = understat.fixtureData
+        val fixtureData = understat.fixtureData
 
         // Then we expect there to be 38 rounds of 10 fixtures (38x10=380 items)
         val expectedItems = 380
-        assertEquals(expectedItems, data.length())
+        assertEquals(expectedItems, fixtureData.length())
     }
 
     @Test
