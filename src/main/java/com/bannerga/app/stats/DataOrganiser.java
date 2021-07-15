@@ -1,3 +1,5 @@
+package com.bannerga.app.stats;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -21,9 +23,10 @@ public class DataOrganiser {
         }
 
         list.sort((a, b) -> {
-            String valA = a.getString(key);
-            String valB = b.getString(key);
-            return -valA.compareTo(valB);
+            System.out.println("Comparing " + a.getString(key) + " to " + b.getString(key) + " choosing");
+            Float firstValue = Float.parseFloat(a.getString(key));
+            Float secondValue = Float.parseFloat(b.getString(key));
+            return -firstValue.compareTo(secondValue);
         });
         return list;
     }
@@ -50,7 +53,7 @@ public class DataOrganiser {
      * @param size the number of items in the new list
      * @return the shortened list
      */
-    private List<JSONObject> limit(List<JSONObject> list, int size) {
+    public List<JSONObject> limit(List<JSONObject> list, int size) {
         return list.stream().limit(size).collect(Collectors.toList());
     }
 

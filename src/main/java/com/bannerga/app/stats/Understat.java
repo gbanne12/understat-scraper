@@ -1,3 +1,5 @@
+package com.bannerga.app.stats;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
