@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>npxG</title>
+
+    <!-- Basic Page Needs
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8"/>
+    <title>FPL Draft - Monthly Table</title>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="/normalize.css" rel="stylesheet"/>
+    <link href="/skeleton.css" rel="stylesheet"/>
+    <link href="/custom.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<div class="black">
+    <div class="container">
+        <div class="row">
+
+            <h1> Goals </h1>
+            <table class="u-full-width" id="goals-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>Goals</th>
+                    <th>Expected Goals</th>
+                    <th>Non-penalty Expected Goals</th>
+                    <th>Shots</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="footballer : ${goalScorers}">
+                    <td th:text="${footballer.name}"></td>
+                    <td th:text="${footballer.team}"></td>
+                    <td th:text="${footballer.goals}"></td>
+                    <td th:text="${footballer.xG}"></td>
+                    <td th:text="${footballer.npxG}"></td>
+                    <td th:text="${footballer.shots}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <h1> Assists </h1>
+            <table class="u-full-width" id="assists-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>Assists</th>
+                    <th>Expected Assists</th>
+                    <th>Key Passes</th>
+                </tr>
+                <tr th:each="footballer : ${assistProviders}">
+                    <td th:text="${footballer.name}"></td>
+                    <td th:text="${footballer.team}"></td>
+                    <td th:text="${footballer.assists}"></td>
+                    <td th:text="${footballer.xA}"></td>
+                    <td th:text="${footballer.key_passes}"></td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

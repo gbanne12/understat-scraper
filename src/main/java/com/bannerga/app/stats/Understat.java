@@ -1,3 +1,5 @@
+package com.bannerga.app.stats;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -22,6 +24,7 @@ public class Understat {
 
     /**
      * Obtains the player data from http://understat.com/League/EPL
+     *
      * @return a JSONArray containing the data for each player
      */
     public JSONArray getPlayerData() {
@@ -39,7 +42,8 @@ public class Understat {
     }
 
     /**
-     * Obtains the player data from http://understat.com/League/EPL
+     * Obtains the fixture data from http://understat.com/League/EPL
+     *
      * @return a JSONArray containing the data for each of the 380 fixtures played in a season
      */
     public JSONArray getFixtureData() {
@@ -60,6 +64,7 @@ public class Understat {
 
     /**
      * Obtains the teams data from http://understat.com/League/EPL
+     *
      * @return a JSONArray containing the data for each of the 20 teams
      */
     public JSONObject getTeamsData() {
@@ -88,6 +93,7 @@ public class Understat {
                 response = response.replace("\\x26\\x23039\\x3B", "'");
                 response = response.replace("\\x20", " ");
                 response = response.replace("\\x2D", "-");
+                response = response.replace("\\x5Cu00c1", "a");
                 response = response.replace("\\x5Cu00e3", "a");
                 response = response.replace("\\x5Cu00e1n", "a");
                 response = response.replace("\\x5Cu00e1", "a");
@@ -96,6 +102,7 @@ public class Understat {
                 response = response.replace("\\x5Cu00e9", "e");
                 response = response.replace("\\x5Cu00eb", "e");
                 response = response.replace("\\x5Cu00ed", "i");
+                response = response.replace("\\x5Cu00f1", "n");
                 response = response.replace("\\x5Cu00f8", "o");
                 response = response.replace("\\x5Cu00f6", "o");
                 response = response.replace("\\x5Cu00f3", "o");
